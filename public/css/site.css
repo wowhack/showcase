@@ -704,7 +704,8 @@ h1 {
   color: #bbb;
   letter-spacing: 10px;
   font-size: 1.125em;
-  text-align: center; }
+  text-align: center;
+  margin: 0 0 1.6em; }
 
 img {
   max-width: 100%;
@@ -718,7 +719,8 @@ p {
   font-family: Pacifico, 'Source Sans Pro', 'Helvetica Neue', sans-serif;
   color: #E00070;
   text-transform: none;
-  font-size: 5.75em;
+  font-size: 8vw;
+  margin: 0;
   letter-spacing: 0; }
 [role="banner"] .grid__item:first-child a {
   display: inline-block;
@@ -729,3 +731,11 @@ p {
 [role="banner"] .grid__item:last-child img {
   display: inline;
   vertical-align: middle; }
+
+/* =FOOTER
+--------------------------------------------- */
+[role="contentinfo"] {
+  font-size: 0.9em;
+  color: #999;
+  text-align: center;
+  padding: 1.6em 0; }

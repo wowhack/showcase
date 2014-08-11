@@ -50,6 +50,7 @@ h1 {
   letter-spacing: 10px;
   font-size: to_em(18);
   text-align: center;
+  margin: 0 0 $lineheight;
 }
 
 img {
@@ -68,7 +69,8 @@ p {
     font-family: $cursive;
     color: $accent;
     text-transform: none;
-    font-size: to_em(92);
+    font-size: 8vw;
+    margin: 0;
     letter-spacing: 0;
   }
 
@@ -90,4 +92,14 @@ p {
       vertical-align: middle;
     }
   }
+}
+
+/* =FOOTER
+--------------------------------------------- */
+
+[role="contentinfo"] {
+  font-size: .9em;
+  color: #999;
+  text-align: center;
+  padding: $lineheight 0;
 }
