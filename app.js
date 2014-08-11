@@ -1,6 +1,6 @@
 var express = require('express')
 var path = require('path')
-var favicon = require('static-favicon')
+var favicon = require('serve-favicon')
 var logger = require('morgan')
 var bodyParser = require('body-parser')
 
@@ -12,7 +12,7 @@ var app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hjs')
 
-app.use(favicon())
+app.use(favicon(__dirname + '/public/images/favicon.png'))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded())
