@@ -1,0 +1,33 @@
+{
+  "name": "showcase",
+  "version": "0.0.1",
+  "description": "Showcase site for #wowhack2014",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wowhack/showcase.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/wowhack/showcase",
+  "private": true,
+  "scripts": {
+    "start": "gulp server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "hjs": "~0.0.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-minify-css": "^0.3.7",
+    "gulp-sass": "^0.7.2",
+    "gulp-util": "^3.0.0",
+    "gulp-watch": "^0.6.8"
+  }
+}
