@@ -35,5 +35,10 @@
 
     </main>
 
+    <footer role="contentinfo">
+      <p>
+        Site made with love by Johan &amp; Anton, Spotify Street Team 2014
+      </p>
+    </footer>
   </body>
 </html>
