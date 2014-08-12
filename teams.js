@@ -2,10 +2,18 @@
 var
   request = require('request')
   fs = require('fs')
+  Promise = require('es6-promise').Promise
+  util = require('util')
+
+function compile (string, key) {
+  return string.replace('@', key);
+}
 
 // Github endpoints
 var gh = {
-  teams_url: 'https://api.github.com/orgs/wowhack/teams'
+  teams: compile.bind(null, 'https://api.github.com/orgs/wowhack/teams'),
+  members: compile.bind(null, 'https://api.github.com/teams/@/members'),
+  repos: compile.bind(null, 'https://api.github.com/teams/@/repos')
 }
 
 var winnerIDs = JSON.parse(fs.readFileSync('./winners.json'));
@@ -23,12 +31,19 @@ var options = {
 
 // TODO, populate with repository data etc.
 function populate (team) {
-  return team;
+
+  return new Promise(function (resolve, reject) {
+    request.get(gh.members(team.id), options, function (req, res, body) {
+      var members = JSON.parse(body);
+      team.members = members;
+      resolve(team.id);
+    });
+  });
 }
 
 // Fetch and group teams by winners and others
 function fetchTeams (callback) {
-  request.get(gh.teams_url, options, function (req, res, body) {
+  request.get(gh.teams(), options, function (req, res, body) {
     var teams;
     try {
       teams = JSON.parse(body);
@@ -37,7 +52,8 @@ function fetchTeams (callback) {
     }
 
     var winners = [];
-    var others = teams;
+    var others = [];
+    var populationRequests = [];
 
     teams.forEach(function (team) {
       if (winnerIDs.indexOf(team.id) >= 0) {
@@ -45,17 +61,27 @@ function fetchTeams (callback) {
       } else {
         others.push(populate(team))
       }
+
+      populationRequests.push(populate(team));
     })
 
     console.assert(winners.length === 3, winners)
 
-    callback({
+    // We should cache the result and send modified since headers
+    var result = {
       winners: winners,
       others: others
-    })
-  });
+    };
 
+    Promise.all(populationRequests).then(function () {
+      callback(result)
+    });
+  });
 }
+
+fetchTeams(function () {
+  console.log(arguments)
+})
 
 module.exports = {
   loadTeams: fetchTeams
