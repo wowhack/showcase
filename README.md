@@ -4,6 +4,7 @@
 
 ```bash
 npm install
+echo '{"user":"xxxx","pass":"yyyy"}' > auth.json #Where xxxx and yyyy should be replaced
 gulp server
 ```
 
