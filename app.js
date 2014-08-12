@@ -10,7 +10,8 @@ var routes = require('./routes')
 var app = express()
 
 var hbs = Handlebars.create({
-  defaultLayout: 'main'
+  defaultLayout: 'main',
+  helpers: require('./view-helpers')
 })
 
 // view engine setup

@@ -1,0 +1,31 @@
+/* =HACK
+--------------------------------------------- */
+
+.hack {
+
+  .desc {
+    margin: $lineheight / 2 0;
+  }
+}
+
+.members-list {
+  list-style: none;
+
+  li {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .avatar {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .username {
+    color: #000;
+    font-weight: normal;
+    font-size: to_em(14);
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}

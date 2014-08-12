@@ -1,0 +1,48 @@
+/* =ELEMENTS
+--------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #bbb;
+  letter-spacing: 10px;
+  font-size: to_em(18);
+  text-align: center;
+  margin: 0 0 $lineheight;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: to_em(28);
+  color: $accent;
+  letter-spacing: 8px;
+  margin-bottom: $lineheight / 2;
+}
+
+h3 {
+  font-weight: 600;
+  font-style: italic;
+  font-size: to_em(14);
+  color: #D7C8AF;
+  margin-bottom: $lineheight / 2;
+  text-transform: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+p {
+  margin: 0 0 $lineheight / 2;
+}
+
+a {
+  color: $accent;
+  text-decoration: none;
+  font-weight: 600;
+}

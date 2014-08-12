@@ -1,0 +1,36 @@
+<div class="grid__item one-third">
+  <article class="hack">
+    {{#with repository}}
+    <h2>{{name}}</h2>
+    <img src="{{../thumbnail}}" alt="{{name}}" />
+    <p class="desc">
+    {{~#if description ~}}
+      {{description}}
+    {{~else~}}
+      <span class="no-content">No description yet</span>
+    {{~/if~}}
+    </p>
+
+    <p class="links">
+      {{#if homepage}}
+      <a href="{{homepage}}">Check it out</a>
+      {{/if}}
+      <small><a href="{{html_url}}">{{html_url}}</a></small>
+    </p>
+    {{/with}}
+
+    <footer>
+      <h3>Made by {{name}}</h3>
+      <ul class="members-list">
+      {{#each members ~}}
+        <li>
+          <a href="{{html_url}}" class="block-link">
+            <img class="avatar" src="{{avatar_url}}" alt="{{login}}" />
+            <span class="username">{{login}}</span>
+          </a>
+        </li>
+      {{~/each}}
+      </ul>
+    </footer>
+  </article>
+</div>

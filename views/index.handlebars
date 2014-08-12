@@ -1,8 +1,13 @@
-<section>
+<section class="grid">
   <h1>Winners</h1>
-  <ul>
-    {{#each winners}}
-      <li>{{name}}</li>
-    {{/each}}
-  </ul>
+  {{#each winners ~}}
+    {{~> hack ~}}
+  {{~/each}}
+</section>
+
+<section>
+  <h1>Other hacks</h1>
+  {{#each others ~}}
+    {{~> hack ~}}
+  {{~/each}}
 </section>

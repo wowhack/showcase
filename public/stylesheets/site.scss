@@ -4,6 +4,8 @@
 
 $accent: #E00070;
 $text-color: #333;
+$gray: #999;
+
 $leading: 1.6;
 
 $font-size: 16;
@@ -40,28 +42,10 @@ body {
   padding: 1% 3%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  text-transform: uppercase;
-}
 
-h1 {
-  color: #bbb;
-  letter-spacing: 10px;
-  font-size: to_em(18);
-  text-align: center;
-  margin: 0 0 $lineheight;
-}
+@import "elements";
+@import "helpers";
 
-img {
-  max-width: 100%;
-  display: block;
-  height: auto;
-}
-
-p {
-  margin: 0 0 $lineheight / 2;
-}
 
 [role="banner"] {
 
@@ -103,3 +87,5 @@ p {
   text-align: center;
   padding: $lineheight 0;
 }
+
+@import "hack";
