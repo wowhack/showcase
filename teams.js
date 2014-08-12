@@ -5,7 +5,9 @@ var
   Promise = require('es6-promise').Promise,
   util = require('util'),
   us = require('underscore'),
-  debug = console.log.bind(console)
+  debug = console.log.bind(console),
+
+  OWNERS_ID = 919870
 
 function compile (string, key) {
   return string.replace('@', key);
@@ -26,18 +28,18 @@ var auth = {
 };
 
 // Request options
-var options = {
+request = request.defaults({
   auth: auth,
   headers: {
     // Github best practices proposes this
     "User-Agent": "wowhack-showcase"
   }
-}
+})
 
 function populator (url, key, fn) {
   return new Promise(function (resolve, reject) {
     debug('Sending populate request to ' + url)
-    request.get(url, options, function (err, res, body) {
+    request.get(url, function (err, res, body) {
       var value = fn(body, (res || {}).statusCode);
       var result = {}
       result[key] = value
@@ -82,13 +84,18 @@ function populate (team) {
 function fetchTeams (callback) {
   debug('Fetching teams')
   console.log('Fetching teams')
-  request.get(gh.teams(), options, function (err, res, body) {
+  request.get(gh.teams(), function (err, res, body) {
     var teams;
     try {
       teams = JSON.parse(body);
     } catch (e) {
-      callback({ error: e })
+      return callback({ error: e })
     }
+
+    // Exclude owner team
+    teams = us.reject(teams, function (team) {
+      return team.id === OWNERS_ID
+    })
 
     var populationRequests = teams.map(function (team) {
       debug('Starting population for team ' + team.id)
@@ -124,10 +131,6 @@ function fetchTeams (callback) {
     });
   });
 }
-
-fetchTeams(function (teams) {
-  console.log(teams)
-})
 
 module.exports = {
   loadTeams: fetchTeams
