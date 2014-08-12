@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "start": "echo \"Starting app ...\" && node bin/www",
-    "preinstall": "echo \"Generating CSS ...\" && gulp css",
+    "postinstall": "echo \"Generating CSS ...\" && gulp css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
