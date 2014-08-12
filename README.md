@@ -4,8 +4,7 @@
 
 ```bash
 npm install
-echo '{"user":"xxxx","pass":"yyyy"}' > auth.json #Where xxxx and yyyy should be replaced
-gulp server
+GH_USER=USER GH_PASS=PASS HOST_NAME=HOSTNAME gulp server
 ```
 
 Visit [localhost:3000](http://localhost:3000) in browser.
