@@ -11,7 +11,7 @@
   "homepage": "https://github.com/wowhack/showcase",
   "private": true,
   "scripts": {
-    "start": "gulp server",
+    "start": "node bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
