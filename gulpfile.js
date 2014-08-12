@@ -20,11 +20,13 @@ var buildSass = function() {
     .pipe(paths.css)
 }
 
-gulp.task('default', ['server'])
+gulp.task('default', ['serve'])
 
 gulp.task('css', buildSass)
 
-gulp.task('server', ['watch'], function() {
+gulp.task('serve', ['watch', 'serve'])
+
+gulp.task('server', function() {
   app.set('port', process.env.PORT || 3000)
 
   var server = app.listen(app.get('port'), function() {
