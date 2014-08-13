@@ -7,9 +7,32 @@
 
 .avatar {
   border-radius: 100%;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: block;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid $accent;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: $accent;
+  text-align: center;
+  padding: .6em 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: rgba($accent, .4) 0 0 1px;
+    background-color: rgba(lighten($accent, 20%), .05);
+  }
+
+  &:active {
+    transform: scale(.98);
+  }
 }
 
 .block-link {

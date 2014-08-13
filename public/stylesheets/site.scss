@@ -1,5 +1,9 @@
 @import "icons";
 @import "utils";
+@import "animations";
+
+$use-markup-fix: false;
+
 @import "grid";
 
 $accent: #E00070;
@@ -48,6 +52,7 @@ body {
 
 
 [role="banner"] {
+  margin-bottom: $lineheight;
 
   h1 {
     font-family: $cursive;

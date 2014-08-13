@@ -3,22 +3,21 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  text-transform: uppercase;
 }
 
 h1 {
-  color: #bbb;
+  color: #888;
   letter-spacing: 10px;
-  font-size: to_em(18);
+  font-size: to_em(20);
   text-align: center;
   margin: 0 0 $lineheight;
+  text-transform: uppercase;
 }
 
 h2 {
   font-weight: 600;
   font-size: to_em(22);
   color: $accent;
-  letter-spacing: 4px;
   margin-bottom: $lineheight / 2;
 }
 
@@ -26,9 +25,8 @@ h3 {
   font-weight: 600;
   font-style: italic;
   font-size: to_em(14);
-  color: #D7C8AF;
+  color: darken(#D7C8AF, 10%);
   margin-bottom: $lineheight / 2;
-  text-transform: none;
 }
 
 img {
@@ -45,4 +43,8 @@ a {
   color: $accent;
   text-decoration: none;
   font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
