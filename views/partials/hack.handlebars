@@ -1,7 +1,7 @@
 <div class="grid__item one-third lap--one-half palm--one-whole">
   <article class="hack">
     {{#with repository}}
-    <h2>{{contentOr name 'No name'}}</h2>
+    <h2>{{#if name}}{{unSlugify name}}{{else}}No name{{/if}}</h2>
     <img src="{{../thumbnail}}" alt="{{name}}" />
     <p class="desc">
     {{~#if description ~}}
@@ -15,9 +15,7 @@
       {{#if homepage}}
       <a class="btn block-link" href="{{homepage}}">Check it out <span class="icon"></span></a>
       {{/if}}
-      {{#unless private}}
       <small><a href="{{html_url}}">{{cleanUrl html_url}}</a></small>
-      {{/unless}}
     </p>
     {{/with}}
 
