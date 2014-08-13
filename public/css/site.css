@@ -721,7 +721,8 @@ h3 {
   font-style: italic;
   font-size: 0.875em;
   color: #D7C8AF;
-  margin-bottom: 0.8em; }
+  margin-bottom: 0.8em;
+  text-transform: none; }
 
 img {
   max-width: 100%;
@@ -782,6 +783,9 @@ a {
 
 .members-list {
   list-style: none; }
+  .members-list li {
+    display: inline-block;
+    width: 50%; }
   .members-list .avatar {
     display: inline-block;
     vertical-align: middle;
