@@ -24,7 +24,7 @@ gulp.task('default', ['serve'])
 
 gulp.task('css', buildSass)
 
-gulp.task('serve', ['watch', 'serve'])
+gulp.task('serve', ['watch', 'server'])
 
 gulp.task('server', function() {
   app.set('port', process.env.PORT || 3000)
