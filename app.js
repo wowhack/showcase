@@ -3,7 +3,8 @@ var express = require('express'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
     bodyParser = require('body-parser')
-    Handlebars  = require('express-handlebars')
+    Handlebars  = require('express-handlebars'),
+    viewHelpers = require('./view-helpers')
 
 var routes = require('./routes')
 
@@ -11,7 +12,7 @@ var app = express()
 
 var hbs = Handlebars.create({
   defaultLayout: 'main',
-  helpers: require('./view-helpers')
+  helpers: viewHelpers
 })
 
 // view engine setup
