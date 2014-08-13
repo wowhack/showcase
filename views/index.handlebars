@@ -1,13 +1,17 @@
-<section class="grid">
-  <h1>Winners</h1>
-  {{#each winners ~}}
-    {{~> hack ~}}
-  {{~/each}}
+<section>
+  <div class="grid">
+    <h1>Winners</h1>
+    {{#each winners ~}}
+      {{~> hack ~}}
+    {{~/each}}
+  </div>
 </section>
 
 <section>
-  <h1>Other hacks</h1>
-  {{#each others ~}}
-    {{~> hack ~}}
-  {{~/each}}
+  <div class="grid">
+    <h1>Other hacks</h1>
+    {{#each others ~}}
+      {{~> hack ~}}
+    {{~/each}}
+  </div>
 </section>
