@@ -1,7 +1,7 @@
-<div class="grid__item one-third">
+<div class="grid__item one-third lap--one-half palm--one-whole">
   <article class="hack">
     {{#with repository}}
-    <h2>{{name}}</h2>
+    <h2>{{contentOr name 'No name'}}</h2>
     <img src="{{../thumbnail}}" alt="{{name}}" />
     <p class="desc">
     {{~#if description ~}}
@@ -13,9 +13,11 @@
 
     <p class="links">
       {{#if homepage}}
-      <a href="{{homepage}}">Check it out</a>
+      <a class="btn block-link" href="{{homepage}}">Check it out <span class="icon"></span></a>
       {{/if}}
-      <small><a href="{{html_url}}">{{html_url}}</a></small>
+      {{#unless private}}
+      <small><a href="{{html_url}}">{{cleanUrl html_url}}</a></small>
+      {{/unless}}
     </p>
     {{/with}}
 
@@ -25,8 +27,8 @@
       {{#each members ~}}
         <li>
           <a href="{{html_url}}" class="block-link">
-            <img class="avatar" src="{{avatar_url}}" alt="{{login}}" />
-            <span class="username">{{login}}</span>
+            <img class="avatar" src="{{avatar_url}}" alt="@{{login}}" />
+            <span class="username">@{{login}}</span>
           </a>
         </li>
       {{~/each}}
