@@ -11,8 +11,11 @@ Visit [localhost:3000](http://localhost:3000) in browser.
 
 Gulp tasks:
 ```bash
-gulp        # Defaults to gulp server
-gulp css    # Compile SCSS to CSS
-gulp watch  # Watch and compile SCSS to CSS
-gulp server # Start Express server and watch SCSS
+gulp        # Defaults to gulp serve
+gulp server # Start Express server on localhost:3000
+gulp css    # Compile Scss to minified CSS
+gulp watch  # Watch and compile Scss to CSS on change
+gulp serve  # Runs server *and* watches Scss
 ```
+
+We take PRs!
