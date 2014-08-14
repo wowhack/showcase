@@ -12,7 +12,7 @@ We need to auth to GitHub, and need login and password for a user. We use enviro
 variables for that in a separate `.env` file, like this:
 
 ```bash
-GH_HOST=localhost:3000
+GH_HOST=http://localhost:3000 # Note that atm both protocol and port is necessary for hackshots to load
 GH_USER=<github username>
 GH_PASS=<github password>
 ```
