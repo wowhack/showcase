@@ -1,5 +1,5 @@
 var route = require('express').Router()
-var Teams = require('./teams')
+var Teams = require('./lib/teams')
 
 /* GET / */
 route.get('/', function(req, res) {
