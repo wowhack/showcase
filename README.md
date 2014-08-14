@@ -4,10 +4,19 @@
 
 ```bash
 npm install
-GH_USER=USER GH_PASS=PASS HOST_NAME=HOSTNAME gulp server
+gulp
 ```
-
 Visit [localhost:3000](http://localhost:3000) in browser.
+
+We need to auth to GitHub, and need login and password for a user. We use environment
+variables for that in a separate `.env` file, like this:
+
+```bash
+GH_HOST=localhost:3000
+GH_USER=<github username>
+GH_PASS=<github password>
+```
+This is automatically injected into the app.
 
 Gulp tasks:
 ```bash
