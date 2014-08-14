@@ -4,14 +4,15 @@ var express = require('express'),
     logger = require('morgan'),
     bodyParser = require('body-parser')
     Handlebars  = require('express-handlebars'),
-    viewHelpers = require('./view-helpers'),
-    env = require('dotenv')
+    viewHelpers = require('./view-helpers')
 
 var app = express()
 
 // Load env vars
-if(app.get('env') === 'development')
+if(app.get('env') === 'development') {
+  env = require('dotenv')
   env.load()
+}
 
 var routes = require('./routes')
 
