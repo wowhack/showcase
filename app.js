@@ -4,11 +4,16 @@ var express = require('express'),
     logger = require('morgan'),
     bodyParser = require('body-parser')
     Handlebars  = require('express-handlebars'),
-    viewHelpers = require('./view-helpers')
-
-var routes = require('./routes')
+    viewHelpers = require('./view-helpers'),
+    env = require('dotenv')
 
 var app = express()
+
+// Load env vars
+if(app.get('env') === 'development')
+  env.load()
+
+var routes = require('./routes')
 
 var hbs = Handlebars.create({
   defaultLayout: 'main',
