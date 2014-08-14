@@ -4,7 +4,7 @@ var express = require('express'),
     logger = require('morgan'),
     bodyParser = require('body-parser')
     Handlebars  = require('express-handlebars'),
-    viewHelpers = require('./view-helpers')
+    viewHelpers = require('./lib/helpers')
 
 var app = express()
 
