@@ -14,6 +14,8 @@
     <p class="links">
       {{#if homepage}}
       <a class="btn block-link" href="{{homepage}}">Check it out <span class="icon"></span></a>
+      {{else}}
+      <a class="btn block-link disabled">Hack is not live yet</a>
       {{/if}}
       <small><a href="{{html_url}}">{{cleanUrl html_url}}</a></small>
     </p>

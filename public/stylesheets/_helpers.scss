@@ -30,8 +30,23 @@
     background-color: rgba(lighten($accent, 20%), .05);
   }
 
+  .icon {
+    line-height: 0;
+  }
+
   &:active {
     transform: scale(.98);
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:active {
+    cursor: default;
+    border-color: #ddd;
+    color: #bbb;
+    background-color: #fefefe;
+    transform: none;
+    box-shadow: none;
   }
 }
 
