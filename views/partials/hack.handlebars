@@ -2,7 +2,7 @@
   <article class="hack">
     {{#with repository}}
     <h2>{{#if name}}{{unSlugify name}}{{else}}No name{{/if}}</h2>
-    <img src="{{../thumbnail}}" alt="{{name}}" />
+    <img src="{{ thumbnailOrDefault ../thumbnail }}" alt="{{name}}" />
     <p class="desc">
     {{~#if description ~}}
       {{description}}
