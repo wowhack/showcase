@@ -8,16 +8,18 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   color: #888;
   letter-spacing: 10px;
-  font-size: to_em(20);
+  font-size: to_em(22);
   text-align: center;
-  margin: 0 0 $lineheight;
+  margin: 0 0 $lineheight*2;
   text-transform: uppercase;
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: bold;
   font-size: to_em(22);
-  color: $accent;
+  color: $text-color;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   margin-bottom: $lineheight / 2;
 }
 
