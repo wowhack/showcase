@@ -17,7 +17,9 @@
       {{else}}
       <a class="btn block-link disabled">Hack is not live yet</a>
       {{/if}}
+      {{#unless private}}
       <small><a href="{{html_url}}">{{cleanUrl html_url}}</a></small>
+      {{/unless}}
     </p>
     {{/with}}
 
